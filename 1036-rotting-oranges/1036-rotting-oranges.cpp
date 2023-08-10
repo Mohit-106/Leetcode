@@ -65,11 +65,11 @@ public:
             addnbr(grid,visited,front->i,front->j-1,front->t+1,q);
 
         }
-        cout<<foranges<<" "<<rotten<<endl;
+        //cout<<foranges<<" "<<rotten<<endl;
         if(foranges==rotten){
             return time;
         }
-        cout<<time<<endl;
+        //cout<<time<<endl;
 
 
         return -1;

@@ -13,10 +13,10 @@ public:
         mp[s[0]]--;
 
         for(int i=1; i<s.size();i++){
-            char ch = s[i];
+            char &ch = s[i];
             if(alreadythere.find(ch)==alreadythere.end()){
                 while(st.size()>0 && ch<=st.top() && mp[st.top()]>0){
-                cout<<st.top()<<" "<<ch<<endl;
+                //cout<<st.top()<<" "<<ch<<endl;
                 alreadythere.erase(st.top());
                 st.pop();
                }

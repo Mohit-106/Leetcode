@@ -8,9 +8,7 @@ public:
         for(int gap=0; gap<n; gap++){
 
             for(int i=0,j=gap;j<n;j++,i++){
-
                 int val = INT_MIN;
-
                 for(int k=i; k<=j; k++){
 
                     int l = k==i?0:dp[i][k-1];
@@ -23,10 +21,7 @@ public:
                     val = max(val,cval);
 
                 }
-
                 dp[i][j] = val;
-
-
             }
 
         }

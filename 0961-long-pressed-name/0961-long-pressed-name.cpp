@@ -2,45 +2,40 @@ class Solution {
 public:
     bool isLongPressedName(string name, string typed) {
 
+        if(name.size() > typed.size()) return false;
 
-        int n = name.size();
-        int m = typed.size();
+        int j = 0;
+        int i = 0;
+        while(i<name.size()){
 
-        if(n>m){
-            return false;
-        }
-
-        int i=0;
-        int j=0;
-
-        while(i<n && j<m){
             if(name[i]!=typed[j]) return false;
-            int num = name[i];
-            i++;
-            int c1=1;
-            while(i<n && num==name[i]){
-                c1++;
-                i++;
+            int l = i+1;
+
+            int cnt=0;
+            while(l<name.size() && name[i]==name[l]){
+                l++;
+                cnt++;
             }
 
-            num = typed[j];
-            j++;
-            int c2=1;
-            while(j<m && num==typed[j]){
-                c2++;
-                j++;
+            int k = j+1;
+            int cnt2=0;
+            while(k<typed.size() && typed[k]==typed[j]){
+                k++;
+                cnt2++;
             }
+            if(cnt2<cnt) return false;
+            j = k;
+            i = l;
 
-            if(c1>c2){
-                return false;
-            }
+
         }
 
-        if(j<m || i<n){
-            return false;
-        }
+          
+        if(j<typed.size()) return false;
 
         return true;
-        
+
+
+
     }
 };
